@@ -26,7 +26,7 @@ public class ProductoService {
     public void listar() {
         boolean hayRegistros = false;
         for (Producto p : DatabaseMock.productos) {
-            if (!p.isEliminado()) {
+            if (p.getId() != null && !p.isEliminado()) {
                 System.out.println(p.toString());
                 hayRegistros = true;
             }
@@ -38,7 +38,7 @@ public class ProductoService {
 
     public Producto buscarPorId(Long id) {
         for (Producto p : DatabaseMock.productos) {
-            if (p.getId().equals(id) && !p.isEliminado()) {
+            if (p.getId() != null && p.getId().equals(id) && !p.isEliminado()) {
                 return p;
             }
         }

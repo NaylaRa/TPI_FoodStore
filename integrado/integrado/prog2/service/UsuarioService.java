@@ -25,7 +25,7 @@ public class UsuarioService {
     public void listar() {
         boolean hayRegistros = false;
         for (Usuario u : DatabaseMock.usuarios) {
-            if (!u.isEliminado()) {
+            if (u.getId() != null && !u.isEliminado()) {
                 System.out.println(u.toString());
                 hayRegistros = true;
             }
@@ -37,7 +37,7 @@ public class UsuarioService {
 
     public Usuario buscarPorId(Long id) {
         for (Usuario u : DatabaseMock.usuarios) {
-            if (u.getId().equals(id) && !u.isEliminado()) {
+            if (u.getId() != null && u.getId().equals(id) && !u.isEliminado()) {
                 return u;
             }
         }

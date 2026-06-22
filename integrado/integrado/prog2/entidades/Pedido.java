@@ -7,13 +7,11 @@ package integrado.prog2.entidades;
 import integrado.prog2.enums.Estado;
 import integrado.prog2.enums.FormaPago;
 import integrado.prog2.interfaces.Calculable;
-
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
 public class Pedido extends Base implements Calculable {
-
     private LocalDate fecha;
     private Estado estado;
     private Double total;
@@ -21,9 +19,7 @@ public class Pedido extends Base implements Calculable {
     private Usuario usuario;
     private List<DetallePedido> detalles;
 
-    public Pedido() {
-        detalles = new ArrayList<>();
-    }
+    public Pedido() { detalles = new ArrayList<>(); }
 
     public Pedido(LocalDate fecha, Estado estado, FormaPago formaPago, Usuario usuario) {
         this.fecha = fecha;
@@ -36,49 +32,34 @@ public class Pedido extends Base implements Calculable {
     @Override
     public double calcularTotal() {
         double suma = 0;
-        for (DetallePedido detalle : detalles) {
-            suma += detalle.getSubtotal();
-        }
-        total = suma;
+        for (DetallePedido detalle : detalles) { suma += detalle.getSubtotal(); }
+        this.total = suma;
         return suma;
     }
 
-    public void addDetallePedido(int cantidad, Double subtotal, Producto producto) {
+    public void addDetallePedido(int cantidad, Producto producto) {
+        if (cantidad <= 0) throw new IllegalArgumentException("La cantidad debe ser mayor a cero.");
+        Double subtotal = producto.getPrecio() * cantidad;
         DetallePedido detalle = new DetallePedido(cantidad, subtotal, producto);
         detalles.add(detalle);
     }
 
-    public DetallePedido findDetallePedidoByProducto(Producto producto) {
-        for (DetallePedido detalle : detalles) {
-            if (detalle.getProducto().getId().equals(producto.getId())) {
-                return detalle;
-            }
-        }
-        return null;
+    @Override
+    public String toString() {
+        return "Pedido ID: " + getId() + " | Fecha: " + fecha + " | Estado: " + estado + " | Total: $" + total;
     }
 
-    public void deleteDetallePedidoByProducto(Producto producto) {
-        DetallePedido detalle = findDetallePedidoByProducto(producto);
-        if (detalle != null) {
-            detalles.remove(detalle);
-        }
-    }
-
+    // Getters y Setters
     public LocalDate getFecha() { return fecha; }
     public void setFecha(LocalDate fecha) { this.fecha = fecha; }
-
     public Estado getEstado() { return estado; }
     public void setEstado(Estado estado) { this.estado = estado; }
-
     public Double getTotal() { return total; }
     public void setTotal(Double total) { this.total = total; }
-
     public FormaPago getFormaPago() { return formaPago; }
     public void setFormaPago(FormaPago formaPago) { this.formaPago = formaPago; }
-
     public Usuario getUsuario() { return usuario; }
     public void setUsuario(Usuario usuario) { this.usuario = usuario; }
-
     public List<DetallePedido> getDetalles() { return detalles; }
     public void setDetalles(List<DetallePedido> detalles) { this.detalles = detalles; }
 }

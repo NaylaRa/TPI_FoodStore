@@ -47,10 +47,15 @@ public class Usuario extends Base {
     public Rol getRol() { return rol; }
     public void setRol(Rol rol) { this.rol = rol; }
 
+    // Este es el método que necesita el PedidoService para validar
+    public boolean isEliminado() {
+        // Asumimos que esta clase hereda de Base, que ya tiene el atributo 'eliminado'
+        return super.isEliminado(); 
+    }
+
     // Método toString 
     @Override
     public String toString() {
         return getId() + " - " + nombre + " " + apellido + " (" + mail + ") - Rol: " + rol;
     }
 }
-

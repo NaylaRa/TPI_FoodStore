@@ -19,11 +19,11 @@ public class DetallePedido extends Base {
     }
 
     public Integer getCantidad() { return cantidad; }
-    public void setCantidad(Integer cantidad) { this.cantidad = cantidad; }
-
     public Double getSubtotal() { return subtotal; }
-    public void setSubtotal(Double subtotal) { this.subtotal = subtotal; }
-
     public Producto getProducto() { return producto; }
-    public void setProducto(Producto producto) { this.producto = producto; }
+
+    @Override
+    public String toString() {
+        return producto.getNombre() + " x" + cantidad + " = $" + subtotal;
+    }
 }

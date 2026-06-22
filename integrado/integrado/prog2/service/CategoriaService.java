@@ -25,7 +25,7 @@ public class CategoriaService {
     public void listar() {
         boolean hayRegistros = false;
         for (Categoria c : DatabaseMock.categorias) {
-            if (!c.isEliminado()) {
+            if (c.getId() != null && !c.isEliminado()) {
                 System.out.println(c.toString());
                 hayRegistros = true;
             }
@@ -37,7 +37,7 @@ public class CategoriaService {
 
     public Categoria buscarPorId(Long id) {
         for (Categoria c : DatabaseMock.categorias) {
-            if (c.getId().equals(id) && !c.isEliminado()) {
+            if (c.getId() != null && c.getId().equals(id) && !c.isEliminado()) {
                 return c;
             }
         }

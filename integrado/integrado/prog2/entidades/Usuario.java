@@ -47,7 +47,7 @@ public class Usuario extends Base {
     public Rol getRol() { return rol; }
     public void setRol(Rol rol) { this.rol = rol; }
 
-    // Método toString solicitado para la entrega
+    // Método toString 
     @Override
     public String toString() {
         return getId() + " - " + nombre + " " + apellido + " (" + mail + ") - Rol: " + rol;

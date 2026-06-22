@@ -6,7 +6,7 @@ package integrado.prog2;
 
 public class Main {
     public static void main(String[] args) {
-        // Redirecciona directamente al menú interactivo de la consola
+        
         AppMenu.main(args);
     }
 }

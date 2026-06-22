@@ -18,7 +18,7 @@ public class AppMenu {
         UsuarioService usuS = new UsuarioService();
         PedidoService pedS = new PedidoService();
 
-        // Carga inicial para que tu sistema no esté vacío al ejecutarlo
+        
         try {
             catS.crear(new Categoria("Bebidas", "Gaseosas"));
             usuS.crear(new Usuario("Usuario", "Sistema", "admin@foodstore.com", "123", "pass", Rol.USUARIO));

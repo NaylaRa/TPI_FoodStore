@@ -21,7 +21,7 @@ Proyecto integrador desarrollado en Java para la materia **Programación 2 (UTN 
 3. Ejecutar la clase `Main.java` ubicada en el paquete `integrado.prog2`.
 
 ## Documentación y Video
-- [Informe PDF del Proyecto](aquí-pegarás-el-link-a-tu-pdf-una-vez-que-lo-subas)
+- [Informe Técnico (PDF)](https://github.com/NaylaRa/TPI_FoodStore/blob/entrega-final-tpi/TPI_Programacion2_FoodStore_Raiolo_Nayla.pdf)
 - [Video Demostración (YouTube)](aquí-pegarás-el-link-a-tu-video)
 
 ---

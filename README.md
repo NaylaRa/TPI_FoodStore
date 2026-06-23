@@ -22,8 +22,8 @@ Proyecto integrador desarrollado en Java para la materia **Programación 2 (UTN 
 
 ## Documentación y Video
 - [Informe Técnico (PDF)](https://github.com/NaylaRa/TPI_FoodStore/blob/entrega-final-tpi/TPI_Programacion2_FoodStore_Raiolo_Nayla.pdf)
-- [Video Demostración (YouTube)](aquí-pegarás-el-link-a-tu-video)
+- [Video Demostración (YouTube)](https://www.youtube.com/watch?v=FTt7_t5mQDI)
 
 ---
-**Autor:** Nayla Antonella Raiolo
+**Alumno:** Nayla Antonella Raiolo
 **Carrera:** Tecnicatura Universitaria en Programación (TUP)
